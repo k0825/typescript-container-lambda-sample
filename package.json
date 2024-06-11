@@ -1,0 +1,24 @@
+{
+  "name": "typescript-container-lambda-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "rm -rf dist/*",
+    "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "postbuild": "cd dist && zip -r index.zip index.js*"
+  },
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@9.3.0+sha512.ee7b93e0c2bd11409c6424f92b866f31d3ea1bef5fbe47d3c7500cdc3c9668833d2e55681ad66df5b640c61fa9dc25d546efa54d76d7f8bf54b13614ac293631",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.138",
+    "@types/node": "^20.14.2",
+    "esbuild": "^0.21.5",
+    "typescript": "^5.4.5",
+    "@sparticuz/chromium": "^123.0.1"
+  },
+  "dependencies": {
+    "puppeteer-core": "^22.10.1"
+  }
+}
